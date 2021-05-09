@@ -11,10 +11,27 @@ B and then writes the result back int the cell at the address stored in B. If
 the value after the subtraction in B is less or equal to zerp, the execution
 jumps to the address specified in C; otherwise execution continues to the next
 instruction, i.e. the address of the cell following C.
-#+begin_src ascii
-+------+
-|      |
-+------+
+#+begin_src text
+
+             :      :      :      :
+             +------+------+------+
+     PC -+-> | A    | B    | C    |
+      ^  |   +------+------+------+
+      |  |   :    | :  ^ | :    | :         :       :   yyyy-xxxx
+      |  |        |    | |      |           +-------+
+      |  |        |    | `--------------> B:|  yyyy | ---> (+) --.
+      |  |        |    |        |           +-------+       ^    |
+      |  |        |    |        |           :       :       |    |
+      |  |        |    |        |           +-------+       |    |
+      |  |        `---------------------> A:|  xxxx | --(-)-'    |
+      |  v             |        |           +-------+            |
+    /-------\          |        |           :       :            |
+   /         \ <-------+-----------------------------------------'
+   \         / <----------------'
+    \-------/
+    C    => PC  if y-x <= 0
+    PC+3 => PC  otherwise (next instruction)
+  
 #+end_src
 
 Assembly notation helps to read and write code in Subleq. The following is the
