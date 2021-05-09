@@ -11,7 +11,7 @@ fn introduction() {
 // to make the elements mutable.
 // See: https://stackoverflow.com/questions/24831828/how-do-i-pass-an-array-to-a-function-in-rust-and-change-its-content
 
-// FIXME: Check for negative 'diff' as this causes rust code to abort due to integer overflow.
+// FIXME: Check for negative 'diff' as this causes rust code to abort due to integer overflow
 fn process(memory: &mut [u16; 0xffff], pc: u16) -> u16 {
     let ptr_a: u16 = memory[pc as usize];
     let ptr_b: u16 = memory[pc as usize + 1];

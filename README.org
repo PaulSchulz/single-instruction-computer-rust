@@ -1,0 +1,22 @@
+* single-instruction-set-computer
+
+This software is an attempt to implement a Single Instruction Set Computer [1],
+based on the Subleq example[2] in the Rust programming language. 
+
+(This is primarily as a learning exercise for Rust, but also as an opportunity
+to be able to experiment with the implementation once created to explore the
+architecture.)
+
+** Implementation Features
+- 32k (16 bit) data and address space
+- RAM based
+
+** TODO Additional Software
+*** Assembler / Dissassember
+*** (Reduced) C Compiler
+*** Debugger
+
+** References
+- [1] Wikipedia: https://en.wikipedia.org/wiki/One-instruction_set_computer
+- [2] Oleg Mazonka, Alex Kolodin "A simple Multi-Processor Computer Based on
+  Subleq" arXiv:1106.2593 https://arxiv.org/pdf/1106.2593 May 2011
