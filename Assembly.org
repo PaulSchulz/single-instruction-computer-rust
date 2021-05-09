@@ -11,11 +11,11 @@ B and then writes the result back int the cell at the address stored in B. If
 the value after the subtraction in B is less or equal to zerp, the execution
 jumps to the address specified in C; otherwise execution continues to the next
 instruction, i.e. the address of the cell following C.
-#+begin_export ascii
+#+begin_src ascii
 +------+
 |      |
 +------+
-#+end_export
+#+end_src
 
 Assembly notation helps to read and write code in Subleq. The following is the
 list of syntax conventions:
