@@ -13,25 +13,27 @@ jumps to the address specified in C; otherwise execution continues to the next
 instruction, i.e. the address of the cell following C.
 #+begin_src text
 
-             :      :      :      :
-             +------+------+------+
-     PC -+-> | A    | B    | C    |
-      ^  |   +------+------+------+
-      |  |   :    | :  ^ | :    | :         :       :   yyyy-xxxx
-      |  |        |    | |      |           +-------+
-      |  |        |    | `--------------> B:|  yyyy | ---> (+) --.
-      |  |        |    |        |           +-------+       ^    |
-      |  |        |    |        |           :       :       |    |
-      |  |        |    |        |           +-------+       |    |
-      |  |        `---------------------> A:|  xxxx | --(-)-'    |
-      |  v             |        |           +-------+            |
-    /-------\          |        |           :       :            |
-   /         \ <-------+-----------------------------------------'
-   \         / <----------------'
-    \-------/
-    C    => PC  if y-x <= 0
-    PC+3 => PC  otherwise (next instruction)
-  
+            :      :      :      :
+            +------+------+------+         Memory
+    PC -+-> | A    | B    | C    |           
+     ^  |   +------+------+------+           
+     |  |   :    | :    | :    | :         :       :   yyyy-xxxx
+     |  |        |      |      |           +-------+
+     |  |        |      `-------------> B: |  yyyy | ---> (+) --.
+     |  |        |             |           +-------+       ^    |
+     |  |        |             |           :  ^    :       |    |
+     |  |        |             |              `----------- |----+
+     |  |        |             |           :       :       |    |
+     |  |        |             |           +-------+       |    |
+     |  |        `--------------------> A: |  xxxx | --(-)-'    |
+     |  v                      |           +-------+            |
+   /-------\                   |           :       :            |
+  /         \ <----------------'                                |
+  \         / <-------------------------------------------------'
+   \-------/
+   C    => PC  if y-x <= 0
+   PC+3 => PC  otherwise (next instruction)
+
 #+end_src
 
 Assembly notation helps to read and write code in Subleq. The following is the
