@@ -1,0 +1,37 @@
+* Subleq Assembly Language
+(The following is summarized from Mazonka et.al[2].)
+
+A Subleq instruction has 3 operators
+#+begin_export ascii
+A B C
+#+end_export
+Execution of one instruction A B C subtracts the value in the memory cell at the
+address stored in A from the content of the memory cell at the address stored in
+B and then writes the result back int the cell at the address stored in B. If
+the value after the subtraction in B is less or equal to zerp, the execution
+jumps to the address specified in C; otherwise execution continues to the next
+instruction, i.e. the address of the cell following C.
+#+begin_export ascii
++------+
+|      |
++------+
+#+end_export
+
+Assembly notation helps to read and write code in Subleq. The following is the
+list of syntax conventions:
+
+- label;
+- question mark;
+- reduced instructions;
+- multi-instruction;
+- literal and expression;
+- data-section;
+- comment.
+
+** Label
+** Question Mark
+** Reduced Instruction
+** Multi-Instructions
+** Literal and Expression
+** Data Section
+** Commernts
