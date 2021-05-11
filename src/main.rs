@@ -7,11 +7,6 @@ fn introduction() {
 }
 
 // Do one processor step
-// FIXME: Does not alter memory. Need to pass a reference to elements somehow,
-// to make the elements mutable.
-// See: https://stackoverflow.com/questions/24831828/how-do-i-pass-an-array-to-a-function-in-rust-and-change-its-content
-
-// FIXME: Check for negative 'diff' as this causes rust code to abort due to integer overflow
 fn process(memory: &mut [u16; 0x10000], pc: u16) -> u16 {
     let ptr_a: u16 = memory[pc as usize];
     let ptr_b: u16 = memory[pc as usize + 1];
@@ -31,11 +26,6 @@ fn process(memory: &mut [u16; 0x10000], pc: u16) -> u16 {
 
     let diff: u16;
     diff = b.wrapping_sub(a);
-    //    if b > a {
-    //    let diff = b - a;
-    //} else {
-    //
-    //}
 
     // Write result
     memory[ptr_b as usize] = diff;
@@ -54,6 +44,7 @@ fn process(memory: &mut [u16; 0x10000], pc: u16) -> u16 {
             ret_pc, ptr_a, a, ptr_b, diff, ptr_c
         );
     }
+
     return ret_pc;
 }
 
