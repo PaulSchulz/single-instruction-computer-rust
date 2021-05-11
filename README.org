@@ -1,6 +1,6 @@
-* single-instruction-set-computer
+* single-instruction-computer
 
-This software is an attempt to implement a Single Instruction Set Computer [1],
+This software is an attempt to implement a Single Instruction Computer [1],
 based on the Subleq example[2] in the Rust programming language. 
 
 (This is primarily as a learning exercise for Rust, but also as an opportunity
@@ -11,12 +11,33 @@ architecture.)
 - 32k (16 bit) data and address space
 - RAM based
 
+** TODO New Features to add
+- Load and dump memory state from disk file
+- Input and Output functions: See references for implementation suggestions
+  using address of -1 (0xFFFF). 
+- Indirect Addressing using negative addresses[7].
+
 ** TODO Additional Software
-*** Assembler / Dissassember
-*** (Reduced) C Compiler
+*** Assembler / Dissassember [3,4]: Programming using Macros
+*** (Reduced) C Compiler - Higher Subleq[5], DawnOS Compiler[6]
 *** Debugger
+
+** Code Examples
+*** Assembly[3]
 
 ** References
 - [1] Wikipedia: https://en.wikipedia.org/wiki/One-instruction_set_computer
 - [2] Oleg Mazonka, Alex Kolodin "A simple Multi-Processor Computer Based on
   Subleq" arXiv:1106.2593 https://arxiv.org/pdf/1106.2593 May 2011
+- [3] http://mazonka.com/subleq/index.html
+- [4] https://techtinkering.com/articles/subleq-a-one-instruction-set-computer/
+- [5] https://esolangs.org/wiki/Higher_Subleq
+- [6] http://users.atw.hu/gerigeri/DawnOS/compiler.html
+- [7] https://techtinkering.com/2009/05/15/improving-the-standard-subleq-oisc-architecture/
+
+
+** Additional Resources
+- Video: SUBLEQ - A One Instruction Set Computer (OISC)
+  - Author: TechTinkering
+  - https://www.youtube.com/watch?v=o0e7_U7ZmBM
+
